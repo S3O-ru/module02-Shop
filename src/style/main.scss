@@ -1,0 +1,62 @@
+$text:#27300f;
+$orange: #d26a22;
+
+.header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__nav {
+        display: flex;
+        justify-content: flex-start;
+        list-style-type: none;
+        gap: 48px;
+        margin: 0;
+        padding-left: 0;
+    }
+        &__link {
+            font-size: 18px;
+            color: $text;
+            text-decoration: none;
+            &:hover {
+                color: $orange;
+            }
+        }
+    &__tel {
+        text-decoration: none;
+        font-size: 18px;
+        color: $text;
+    }
+    &__cart {
+        display: block;
+        background-image: url(../images/cart.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: $orange;
+        background-size: 17px 15px;
+        border-radius: 50%;
+        border: 1px solid $orange;
+        width: 39px;
+        height: 39px;
+    }
+    &__counter {
+        color: white;
+        font-size: 8px;
+        position: absolute;
+        right: 35px;
+        top: 12px;
+    }
+}
+
+.logo {
+    display: block;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 123px;
+    height: 32px;
+}
