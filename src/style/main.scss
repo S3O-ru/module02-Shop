@@ -16,13 +16,12 @@ body {
 }
 .header {
     max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 15px;
+    margin: 0 auto 6.0rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 4rem;
+    padding: 4rem 15px 0 15px;
 
     &__nav {
         display: flex;
@@ -33,7 +32,6 @@ body {
         padding-left: 0;
     }
         &__link {
-            font-size: 1.6rem;
             color: $text;
             text-decoration: none;
             &:hover {
@@ -42,7 +40,6 @@ body {
         }
     &__tel {
         text-decoration: none;
-        font-size: 1.6rem;
         color: $text;
         font-weight: 500;
         &:hover {
@@ -81,4 +78,150 @@ body {
     background-size: cover;
     width: 12.3rem;
     height: 3.2rem;
+}
+.conteiner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.main {
+    background-image: url(../images/main.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    position: relative;
+    padding-bottom: 187px;
+    &__item {
+        margin-top: 6rem;
+        padding-left: 12rem;
+        max-width: 378px;
+    }
+    &__link {
+        margin-top: 6rem;
+    }
+    &__flex {
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    &__cover {
+        flex-basis: 763px;
+        aspect-ratio: 1/1;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    &__line {
+        width: 658px;
+        height: 658px;
+        // box-shadow: 0 0 0 1px rgba($green, 0.4), 0 0 0 53px #fff, 0 0 0 54px rgba($green, 0.4);
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__image {
+        width: 92%;
+    }
+    &__btn {
+        border: none;
+        padding: 0;
+        position: absolute;
+        color: $green;
+        background-color: transparent;
+        text-align: left;
+        cursor: pointer;
+        &:hover {
+            .main__btn {
+                &::before {
+                    background-color: $orange;
+                    box-shadow: 0 0 0 4px #fff, 0 0 0 5px $orange;
+                }
+            }
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            background-color: $green;
+            width: 11px;
+            height: 11px;
+            box-shadow: 0 0 0 4px #fff, 0 0 0 5px $green;
+            border-radius: 100%;
+        }
+        &_01 {
+            top: 6.3rem;
+            left: 4.1rem;
+            &::before {
+                bottom: 0;
+                right: -1.8rem;
+            }
+        }
+        &_02 {
+            top: 20rem;
+            right: -3rem;
+            &::before {
+                bottom: 1.2rem;
+                right: 7.8rem;
+            }
+        }
+        &_03 {
+            bottom: -5rem;
+            right: 28rem;
+            &::before {
+                bottom: 4.7rem;
+                right: 3.7rem;
+            }
+        }
+    }
+    &__food {
+        display: block;
+        color: rgba($green, 0.8);
+    }
+    &__tomato {
+        position: absolute;
+        bottom: 100px;
+        right: 18px;
+        width: 11rem;
+        aspect-ratio: 1/1;
+    }
+}
+.title {
+    margin: 0;
+    font-family: $font-cormorant;
+    font-weight: 700;
+    font-size: 7rem;
+    color: $green;
+    &__span {
+        font-style: italic;
+    }
+    &_block {
+        .title__span {
+            display: block;
+        }
+    }
+}
+.description {
+    margin: 0;
+    &_size-s {
+        font-size: 1.8rem;
+    }
+}
+.link {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 2.5rem 4.2rem;
+    background-color: $orange;
+    border-radius: 3.8rem;
+    box-shadow: 0px 10px 11.18px 1.82px rgba(207, 92, 13, 0.2);
+    cursor: pointer;
+      
 }
