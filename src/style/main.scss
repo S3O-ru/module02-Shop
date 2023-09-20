@@ -13,6 +13,7 @@ html {
 body {
     font-size: 1.6rem;
     font-family: $font-jost;
+    
 }
 .header {
     max-width: 1440px;
@@ -21,8 +22,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem 15px 0 15px;
-
+    padding: 40px 15px 0 15px;
     &__nav {
         display: flex;
         justify-content: flex-start;
@@ -42,6 +42,7 @@ body {
         text-decoration: none;
         color: $text;
         font-weight: 500;
+        z-index: 1;
         &:hover {
             color: $orange;
         }
@@ -57,6 +58,7 @@ body {
         border: 1px solid $orange;
         width: 3.9rem;
         height: 3.9rem;
+        z-index: 1;
         &:hover {
             background-color: $green;
             border: 1px solid $green;
@@ -75,19 +77,19 @@ body {
     display: block;
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 12.3rem;
     height: 3.2rem;
 }
 .conteiner {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 30px;
 }
 .main {
     background-image: url(../images/main.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     background-position-x: center;
     position: relative;
     padding-bottom: 187px;
@@ -107,7 +109,7 @@ body {
         gap: 30px;
     }
     &__cover {
-        flex-basis: 763px;
+        flex-basis: 758px;
         aspect-ratio: 1/1;
         border: 1px solid rgba($green, 0.4);
         border-radius: 100%;
@@ -118,8 +120,8 @@ body {
         position: relative;
     }
     &__line {
-        width: 658px;
-        height: 658px;
+        width: 616px;
+        height: 616px;
         // box-shadow: 0 0 0 1px rgba($green, 0.4), 0 0 0 53px #fff, 0 0 0 54px rgba($green, 0.4);
         border: 1px solid rgba($green, 0.4);
         border-radius: 100%;
@@ -129,7 +131,10 @@ body {
         align-items: center;
     }
     &__image {
-        width: 92%;
+        width: 89%;
+    }
+    &__text {
+        padding-top: 4rem;
     }
     &__btn {
         border: none;
@@ -138,6 +143,7 @@ body {
         color: $green;
         background-color: transparent;
         text-align: left;
+        letter-spacing: 0.13rem;
         cursor: pointer;
         &:hover {
             .main__btn {
@@ -158,18 +164,18 @@ body {
         }
         &_01 {
             top: 6.3rem;
-            left: 4.1rem;
+            left: 4.5rem;
             &::before {
                 bottom: 0;
                 right: -1.8rem;
             }
         }
         &_02 {
-            top: 20rem;
-            right: -3rem;
+            top: 18rem;
+            right: 2rem;
             &::before {
                 bottom: 1.2rem;
-                right: 7.8rem;
+                right: 10.3rem;
             }
         }
         &_03 {
@@ -192,6 +198,35 @@ body {
         width: 11rem;
         aspect-ratio: 1/1;
     }
+    &__avocado {
+        position: absolute;
+        top: 56px;
+        right: 0px;
+        width: 19.4rem;
+        aspect-ratio: 1/1;
+        z-index: 0;
+    }
+    &__cucumber {
+        position: absolute;
+        top: -3px;
+        left: 700px;
+        width: 8.5rem;
+        z-index: 0;
+    }
+    &__pepper {
+        position: absolute;
+        top: 488px;
+        left: 26px;
+        width: 8.6rem;
+        aspect-ratio: 1/1;
+        z-index: 0;
+    }
+    &__beans {
+        position: absolute;
+        bottom: 100px;
+        left: -7px;
+        z-index: 0;
+    }
 }
 .title {
     margin: 0;
@@ -210,8 +245,12 @@ body {
 }
 .description {
     margin: 0;
+    line-height: 1.5;
     &_size-s {
         font-size: 1.8rem;
+    }
+    &_size-m {
+        font-size: 2.4em;
     }
 }
 .link {
@@ -223,5 +262,40 @@ body {
     border-radius: 3.8rem;
     box-shadow: 0px 10px 11.18px 1.82px rgba(207, 92, 13, 0.2);
     cursor: pointer;
-      
+}
+.offer {
+    background-image: url(../images/offer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    padding-top: 2rem;
+    padding-bottom: 200px;
+    &__text {
+        margin-top: 6rem;
+        max-width: 700px;
+    }
+    &__slider {
+        overflow: hidden;
+        padding-top: 100px
+    }
+}
+.swiper {
+    overflow: initial;
+    &-slide {
+        border: 1px solid $green;
+    }
+    &-pagination {
+        display: none;
+    }
+    &-button-next,
+    &-button-prev {
+        top: -60px;
+        &::after {
+            color: $green;
+        }
+    }
+    &-button-prev {
+        left: initial;
+        right: 100px;
+    }
 }
