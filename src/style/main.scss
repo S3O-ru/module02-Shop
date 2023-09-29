@@ -2,6 +2,7 @@
 
 $text:#27300f;
 $orange: #d26a22;
+$dark-orange: #cf5c0d;
 $green: #27300f;
 
 $font-jost:'Jost', sans-serif;
@@ -13,6 +14,10 @@ html {
 body {
     font-size: 1.6rem;
     font-family: $font-jost;
+    background-image: url(../images/background-all.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
     
 }
 .header {
@@ -34,6 +39,7 @@ body {
         &__link {
             color: $text;
             text-decoration: none;
+            transition: .2s;
             &:hover {
                 color: $orange;
             }
@@ -43,6 +49,7 @@ body {
         color: $text;
         font-weight: 500;
         z-index: 1;
+        transition: .2s;
         &:hover {
             color: $orange;
         }
@@ -59,6 +66,7 @@ body {
         width: 3.9rem;
         height: 3.9rem;
         z-index: 1;
+        transition: .2s;
         &:hover {
             background-color: $green;
             border: 1px solid $green;
@@ -80,6 +88,11 @@ body {
     background-size: contain;
     width: 12.3rem;
     height: 3.2rem;
+    &_footer {
+        flex-basis: 18rem;
+        height: 4.8rem;
+        margin-top: 0.8rem;
+    }
 }
 .conteiner {
     max-width: 1440px;
@@ -87,10 +100,6 @@ body {
     padding: 0 30px;
 }
 .main {
-    background-image: url(../images/main.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position-x: center;
     position: relative;
     padding-bottom: 187px;
     &__item {
@@ -100,6 +109,7 @@ body {
     }
     &__link {
         margin-top: 6rem;
+        transition: .2s;
     }
     &__flex {
         padding: 0 15px;
@@ -265,6 +275,10 @@ body {
     cursor: pointer;
     display: inline-block;
     border: none;
+    transition: .2s;
+    &:hover {
+        background-color: $dark-orange;
+    }
     &_min {
         font-size: 1.1rem;
         padding: 2rem 2.7rem;
@@ -272,10 +286,6 @@ body {
     }
 }
 .offer {
-    background-image: url(../images/offer.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
     padding-top: 2rem;
     padding-bottom: 128px;
     &__text {
@@ -419,6 +429,7 @@ body {
     }
     &-button-next,
     &-button-prev {
+        transition: .2s;
         top: -60px;
         &:hover {
             &::after {
@@ -473,6 +484,7 @@ body {
         width: 46px;
         border: none;
         padding: 0;
+        transition: .2s;
         &_min {
             width: 33px;
         }
@@ -590,6 +602,7 @@ body {
         text-decoration: none;
         border-radius: 4rem;
         display: block;
+        transition: .2s;
         &:hover {
             border: 1px solid $orange;
             color: $orange;
@@ -655,6 +668,7 @@ body {
     &__link {
         color: #27300f;
         text-decoration: none;
+        transition: .2s;
         position: relative;
         &::after {
             position: absolute;
@@ -698,8 +712,11 @@ body {
         background-position: center center;
         height: 3.2rem;
         opacity: .4;
+        transform: scale(1);
+        transition: .2s;
         &:hover {
             opacity: 1;
+            transform: scale(1.05);
         }
     }
     &__mc {
@@ -753,6 +770,7 @@ body {
             display: flex;
             align-items: center;
             gap: 3rem;
+            transition: .2s;
             &::before {
                 content: '';
                 background-repeat: no-repeat;
@@ -799,6 +817,7 @@ body {
         width: 100%;
         box-sizing: border-box;
         border-radius: 2rem;
+        transition: .2s;
         &:focus {
             border: 1px solid rgba($green, 1);
             outline: none;
@@ -817,6 +836,7 @@ body {
     }
     &__link {
         margin-top: 1.2rem;
+        transition: .2s;
     }
     &__docs {
         color: rgba($green, .6);
@@ -824,9 +844,101 @@ body {
         border-bottom: 1px solid #ecedec;
     }
 }
+footer {
+    border-top: 1px solid #d4d6cf;
+    padding-top: 7.9rem;
+    padding-bottom: 7rem;
+}
 .footer {
-    background-image: url(../images/background-end.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.8rem;
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 66.5%;
+    }
+    &__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    &__item {
+        margin-bottom: 2.6rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__link {
+        color: $green;
+        text-decoration: none;
+        transition: .2s;
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: column;
+    }
+    &__tel {
+        font-size: 2.7rem;
+        display: block;
+        margin-bottom: 3rem;
+    }
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        color: rgba($green, .6);
+        margin-top: 4rem;
+    }
+    &__author {
+        color: rgba($green, .6);
+        text-decoration: none;
+        transition: .2s;
+        cursor: pointer;
+        &:hover {
+            color: rgba($green, 1);
+        }
+    }
+}
+
+
+.footer-social {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    &__link {
+        display: block;
+        width: 4.6rem;
+        height: 4.6rem;
+        border: 2px solid $green;
+        border-radius: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: .8;
+        transition: .2s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__vk {
+        background-image: url(../images/vk.svg);
+        background-size: 2.3rem;
+    }
+    &__fb {
+        background-image: url(../images/fb.svg);
+        background-size: 1.8rem;
+    }
+    &__insta {
+        background-image: url(../images/insta.svg);
+        background-size: 1.8rem;
+    }
 }
