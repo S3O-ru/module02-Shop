@@ -8,6 +8,16 @@ $green: #27300f;
 $font-jost:'Jost', sans-serif;
 $font-cormorant:'Cormorant', serif;
 
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_500: 500px;
+$r_mob_600: 600px;
+$r_tab: 768px;
+$r_desk: 1000px;
+$r_desk_hd: 1200px;
+$r_desk_1280: 1280px;
+
 html {
     font-size: 10px;
 }
@@ -17,7 +27,6 @@ body {
     background-image: url(../images/background-all.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: center;
     
 }
 .header {
@@ -28,6 +37,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 40px 15px 0 15px;
+    gap: 5%;
+    &__navigation {
+        flex-grow: 1;
+        margin-left: 4.5rem;
+    }
     &__nav {
         display: flex;
         justify-content: flex-start;
@@ -45,7 +59,10 @@ body {
             }
         }
     &__tel {
+        letter-spacing: .13rem;
+        text-align: right;
         text-decoration: none;
+        flex-basis: 20rem;
         color: $text;
         font-weight: 500;
         z-index: 1;
@@ -55,6 +72,7 @@ body {
         }
     }
     &__cart {
+        position: relative;
         display: block;
         background-image: url(../images/cart.svg);
         background-repeat: no-repeat;
@@ -63,7 +81,7 @@ body {
         background-size: 1.7rem 1.5rem;
         border-radius: 50%;
         border: 1px solid $orange;
-        width: 3.9rem;
+        flex-basis: 3.9rem;
         height: 3.9rem;
         z-index: 1;
         transition: .2s;
@@ -76,8 +94,8 @@ body {
         color: white;
         font-size: .8rem;
         position: absolute;
-        right: 3.5rem;
-        top: 1.2rem;
+        right: 0.7rem;
+        top: 0.4rem;
     }
 }
 
@@ -86,7 +104,7 @@ body {
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 12.3rem;
+    flex-basis: 12.3rem;
     height: 3.2rem;
     &_footer {
         flex-basis: 18rem;
@@ -142,6 +160,9 @@ body {
     }
     &__image {
         width: 89%;
+        box-shadow: 20px 20px 33px 0 rgba($green, .5);
+        border-radius: 100%;
+        animation: shadow 7s linear infinite;
     }
     &__text {
         padding-top: 4rem;
@@ -940,5 +961,16 @@ footer {
     &__insta {
         background-image: url(../images/insta.svg);
         background-size: 1.8rem;
+    }
+}
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba($green, .45);
+    }
+    50% {
+        box-shadow: 20px 20px 33px 0 rgba($green, .5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($green, .45);
     }
 }
