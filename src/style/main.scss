@@ -14,9 +14,14 @@ $r_mob_400: 400px;
 $r_mob_500: 500px;
 $r_mob_600: 600px;
 $r_tab: 768px;
+$r_tab_900: 900px;
 $r_desk: 1000px;
+$r_desk_1050: 1050px;
+$r_desk_1120: 1120px;
 $r_desk_hd: 1200px;
 $r_desk_1280: 1280px;
+$r_desk_1300: 1300px;
+$r_desk_1400: 1400px;
 
 html {
     font-size: 10px;
@@ -37,10 +42,22 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 40px 15px 0 15px;
-    gap: 5%;
+    gap: 3.5%;
+    @media (max-width: $r_desk_1280) {
+        gap: 3%;
+    }
     &__navigation {
         flex-grow: 1;
         margin-left: 4.5rem;
+        @media (max-width: $r_desk_1280) {
+            margin-left: 0; 
+        }
+        @media (max-width: $r_desk_hd) {
+            flex-grow: 0;
+        }
+        @media (max-width: $r_tab_900) {
+            display: none;
+        }
     }
     &__nav {
         display: flex;
@@ -49,6 +66,9 @@ body {
         gap: 4.8rem;
         margin: 0;
         padding-left: 0;
+        @media (max-width: $r_desk_hd) {
+            gap: 2.5rem;
+        }
     }
         &__link {
             color: $text;
@@ -70,6 +90,9 @@ body {
         &:hover {
             color: $orange;
         }
+        @media (max-width: $r_desk_hd) {
+            display: none;
+        }
     }
     &__cart {
         position: relative;
@@ -81,13 +104,24 @@ body {
         background-size: 1.7rem 1.5rem;
         border-radius: 50%;
         border: 1px solid $orange;
-        flex-basis: 3.9rem;
+        width: 3.9rem;
         height: 3.9rem;
         z-index: 1;
         transition: .2s;
+        cursor: pointer;
+        @media (max-width: $r_desk_hd) {
+            background-image: url(../images/cart-mob.svg);
+            background-color: white;
+            border: 1px solid $green;
+            opacity: .8;
+        }
         &:hover {
             background-color: $green;
             border: 1px solid $green;
+            @media (max-width: $r_desk_hd) {
+                background-color: white;
+                opacity: 1;
+            }
         }
     }
     &__counter {
@@ -96,6 +130,59 @@ body {
         position: absolute;
         right: 0.7rem;
         top: 0.4rem;
+        @media (max-width: $r_desk_hd) {
+            color: $green;
+        }
+    }
+    &__phone, &__menu {
+        display: none;
+    }
+    &__phone {
+        @media (max-width: $r_desk_hd) {
+            display: block;
+            background-image: url(../images/tel.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: white;
+            background-size: 1.7rem 1.5rem;
+            border-radius: 50%;
+            border: 1px solid $green;
+            width: 3.9rem;
+            height: 3.9rem;
+            z-index: 1;
+            transition: .2s;
+            opacity: .8;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__menu {
+        @media (max-width: $r_tab_900) {
+            display: block;
+            background-image: url(../images/menu.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: white;
+            background-size: 1.7rem 1.5rem;
+            border-radius: 50%;
+            border: 1px solid $green;
+            width: 3.9rem;
+            height: 3.9rem;
+            z-index: 1;
+            transition: .2s;
+            opacity: .8;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    } 
+    &__buttons {
+        @media (max-width: $r_desk_hd) {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
     }
 }
 
@@ -124,6 +211,9 @@ body {
         margin-top: 6rem;
         padding-left: 12rem;
         max-width: 378px;
+        @media (max-width: $r_desk_1280) {
+            padding-left: 8rem;
+        }
     }
     &__link {
         margin-top: 6rem;
@@ -135,6 +225,9 @@ body {
         justify-content: space-between;
         align-items: center;
         gap: 30px;
+        @media (max-width: $r_desk_1120) {
+            padding: 3rem 15px 3rem;
+        }
     }
     &__cover {
         flex-basis: 758px;
@@ -146,6 +239,17 @@ body {
         justify-content: center;
         align-items: center;
         position: relative;
+        @media (max-width: $r_desk_1400) {
+            flex-basis: 650px;
+        }
+        @media (max-width: $r_desk_1280) {
+            flex-basis: 600px;
+        }
+        @media (max-width: $r_desk_1120) {
+            height: auto;
+            flex-basis: calc(100% - 395px);
+            border: 1px solid transparent;
+        }
     }
     &__line {
         width: 616px;
@@ -157,6 +261,13 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @media (max-width: $r_desk_1400) {
+            width: 600px;
+            height: 600px;
+        }
+        @media (max-width: $r_desk_1280) {
+            border: 1px solid transparent;
+        }
     }
     &__image {
         width: 89%;
@@ -166,7 +277,11 @@ body {
     }
     &__text {
         padding-top: 4rem;
+        @media (max-width: $r_desk_1120) {
+            flex-basis: 395px;
+        }
     }
+    // флэкс-бейсис не высчитывается
     &__btn {
         border: none;
         padding: 0;
@@ -200,6 +315,13 @@ body {
                 bottom: 0;
                 right: -1.8rem;
             }
+            @media (max-width: $r_desk_1280) {
+                top: 5.3rem;
+                left: 1.5rem;
+            }
+            @media (max-width: $r_desk_1120) {
+                display: none;
+            }
         }
         &_02 {
             top: 18rem;
@@ -208,6 +330,19 @@ body {
                 bottom: 1.2rem;
                 right: 10.3rem;
             }
+            @media (max-width: $r_desk_1400) {
+                top: 10rem;
+                right: -0.1rem;
+            }
+            @media (max-width: $r_desk_1300) {
+                top: 9.5rem;
+            }
+            @media (max-width: $r_desk_1280) {
+                top: 5.5rem;
+            }
+            @media (max-width: $r_desk_1120) {
+                display: none;
+            }
         }
         &_03 {
             bottom: -5rem;
@@ -215,6 +350,12 @@ body {
             &::before {
                 bottom: 4.7rem;
                 right: 3.7rem;
+            }
+            @media (max-width: $r_desk_1400) {
+                bottom: -5.3rem;
+            }
+            @media (max-width: $r_desk_1120) {
+                display: none;
             }
         }
     }
@@ -240,7 +381,7 @@ body {
     &__cucumber {
         position: absolute;
         top: -3px;
-        left: 700px;
+        left: 35%;
         width: 8.5rem;
         z-index: 0;
     }
@@ -265,6 +406,15 @@ body {
     font-weight: 700;
     font-size: 7rem;
     color: $green;
+    @media (max-width: $r_desk_1280) {
+        font-size: 6rem;
+    }
+    @media (max-width: $r_desk_1120) {
+        font-size: 5rem;
+    }
+    @media (max-width: $r_desk_1050) {
+        font-size: 4rem;
+    }
     &__span {
         font-style: italic;
     }
@@ -279,9 +429,15 @@ body {
     line-height: 1.5;
     &_size-s {
         font-size: 1.8rem;
+        @media (max-width: $r_desk_1280) {
+            font-size: 1.6rem;
+        }
     }
     &_size-m {
         font-size: 2.4em;
+        @media (max-width: $r_desk_1280) {
+            font-size: 2.2rem;
+        }
     }
 }
 .link {
@@ -297,6 +453,9 @@ body {
     display: inline-block;
     border: none;
     transition: .2s;
+    @media (max-width: $r_desk_1280) {
+        font-size: 1.4rem;
+    }
     &:hover {
         background-color: $dark-orange;
     }
