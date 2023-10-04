@@ -32,7 +32,8 @@ body {
     background-image: url(../images/background-all.png);
     background-repeat: no-repeat;
     background-size: cover;
-    
+    // overflow: hidden;
+
 }
 .header {
     max-width: 1440px;
@@ -50,7 +51,7 @@ body {
         flex-grow: 1;
         margin-left: 4.5rem;
         @media (max-width: $r_desk_1280) {
-            margin-left: 0; 
+            margin-left: 0;
         }
         @media (max-width: $r_desk_hd) {
             flex-grow: 0;
@@ -176,7 +177,7 @@ body {
         &:hover {
             opacity: 1;
         }
-    } 
+    }
     &__buttons {
         @media (max-width: $r_desk_hd) {
             display: flex;
@@ -203,6 +204,9 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 30px;
+    @media (max-width: $r_tab) {
+        max-width: 600px;
+    }
 }
 .main {
     position: relative;
@@ -214,10 +218,19 @@ body {
         @media (max-width: $r_desk_1280) {
             padding-left: 8rem;
         }
+        @media (max-width: $r_tab) {
+            text-align: center;
+            max-width: 100%;
+            padding-left: 0;
+            margin-top: 3rem;
+        }
     }
     &__link {
         margin-top: 6rem;
         transition: .2s;
+        @media (max-width: $r_tab) {
+            text-align: center;
+        }
     }
     &__flex {
         padding: 0 15px;
@@ -231,7 +244,8 @@ body {
     }
     &__cover {
         flex-basis: 758px;
-        aspect-ratio: 1/1;
+        height: 758px;
+        // aspect-ratio: 1/1;
         border: 1px solid rgba($green, 0.4);
         border-radius: 100%;
         display: flex;
@@ -241,14 +255,19 @@ body {
         position: relative;
         @media (max-width: $r_desk_1400) {
             flex-basis: 650px;
+            height: 650px;
         }
         @media (max-width: $r_desk_1280) {
             flex-basis: 600px;
+            height: 600px;
         }
-        @media (max-width: $r_desk_1120) {
+        @media (max-width: $r_desk_hd) {
             height: auto;
-            flex-basis: calc(100% - 395px);
+            flex-basis: calc(100% - 418px);
             border: 1px solid transparent;
+        }
+        @media (max-width: $r_tab) {
+            display: none;
         }
     }
     &__line {
@@ -267,6 +286,8 @@ body {
         }
         @media (max-width: $r_desk_1280) {
             border: 1px solid transparent;
+            width: auto;
+            height: auto;
         }
     }
     &__image {
@@ -275,10 +296,26 @@ body {
         border-radius: 100%;
         animation: shadow 7s linear infinite;
     }
+    &__image-mobile {
+        display: none;
+        @media (max-width: $r_tab) {
+        display: block;
+        max-width: 300px;
+        margin: 0 auto;
+        margin-top: 3rem;
+        box-shadow: 20px 20px 33px 0 rgba($green, .5);
+        border-radius: 100%;
+        animation: shadow 7s linear infinite;
+        }
+    }
     &__text {
         padding-top: 4rem;
         @media (max-width: $r_desk_1120) {
-            flex-basis: 395px;
+            flex-basis: 418px;
+        }
+        @media (max-width: $r_tab) {
+            flex-basis: 100%;
+            padding-top: 0;
         }
     }
     // флэкс-бейсис не высчитывается
@@ -319,7 +356,7 @@ body {
                 top: 5.3rem;
                 left: 1.5rem;
             }
-            @media (max-width: $r_desk_1120) {
+            @media (max-width: $r_desk_hd) {
                 display: none;
             }
         }
@@ -340,7 +377,7 @@ body {
             @media (max-width: $r_desk_1280) {
                 top: 5.5rem;
             }
-            @media (max-width: $r_desk_1120) {
+            @media (max-width: $r_desk_hd) {
                 display: none;
             }
         }
@@ -354,7 +391,7 @@ body {
             @media (max-width: $r_desk_1400) {
                 bottom: -5.3rem;
             }
-            @media (max-width: $r_desk_1120) {
+            @media (max-width: $r_desk_hd) {
                 display: none;
             }
         }
@@ -378,6 +415,9 @@ body {
         width: 19.4rem;
         aspect-ratio: 1/1;
         z-index: 0;
+        @media (max-width: $r_desk_1280) {
+            right: -100px;
+        }
     }
     &__cucumber {
         position: absolute;
@@ -410,11 +450,8 @@ body {
     @media (max-width: $r_desk_1280) {
         font-size: 6rem;
     }
-    @media (max-width: $r_desk_1120) {
-        font-size: 5rem;
-    }
-    @media (max-width: $r_desk_1050) {
-        font-size: 4rem;
+    @media (max-width: $r_tab) {
+        text-align: center;
     }
     &__span {
         font-style: italic;
@@ -428,6 +465,9 @@ body {
 .description {
     margin: 0;
     line-height: 1.5;
+    @media (max-width: $r_tab) {
+        text-align: center;
+    }
     &_size-s {
         font-size: 1.8rem;
         @media (max-width: $r_desk_1280) {
@@ -486,6 +526,12 @@ body {
 .slider {
     overflow: hidden;
     padding-top: 9.4rem;
+    @media (max-width: $r_tab) {
+        max-width: 450px;
+        margin: 0 auto;
+        padding-top: 5.4rem;
+        padding-bottom: 6rem;
+    }
 }
 .swiper {
     overflow: initial;
@@ -503,7 +549,11 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            background-size: contain;
             padding: 4rem 3.7rem;
+            @media (max-width: $r_desk_hd) {
+                height: 400px;
+            }
             &:hover {
                 .swiper-slide__hover {
                     height: 233px;
@@ -607,11 +657,17 @@ body {
     }
     &-pagination {
         display: none;
+        @media (max-width: $r_tab) {
+            display: block;
+        }
     }
     &-button-next,
     &-button-prev {
         transition: .2s;
         top: -60px;
+        @media (max-width: $r_tab) {
+            display: none;
+        }
         &:hover {
             &::after {
                 color: rgba($green, 1);
@@ -630,7 +686,20 @@ body {
         right: 72px;
     }
 }
-
+.swiper-horizontal > .swiper-pagination-bullets {
+    bottom: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+}
+.swiper-pagination-bullet-active {
+    background-color: $orange;
+    border: 1px solid $orange;
+}
 .counter {
     display: flex;
     &__btn {
@@ -682,6 +751,15 @@ body {
     &__text {
         margin-left: 12rem;
         max-width: 629px;
+        @media (max-width: $r_desk_1280) {
+            padding-left: 8rem;
+        }
+        @media (max-width: $r_tab) {
+            text-align: center;
+            max-width: 100%;
+            padding-left: 0;
+            margin-top: 3rem;
+        }
     }
     &__list {
         list-style: none;
@@ -726,7 +804,7 @@ body {
                 background-size: 45px 39 px;
             }
         }
-        
+
     }
 }
 .catalog {
