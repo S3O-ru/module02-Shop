@@ -54,4 +54,18 @@ var swiper = new Swiper(".offerSwiper", {
       prevEl: ".swiper-button-prev",
     },
     modules: [Navigation, Pagination],
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        sladesPerGroup: 1,
+      },
+      768: {
+        slidesPerView: 2,
+        sladesPerGroup: 2,
+      },
+      1280: {
+        slidesPerView: 3,
+        sladesPerGroup: 3,
+      }
+    }
   });

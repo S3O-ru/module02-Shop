@@ -198,6 +198,16 @@ body {
         flex-basis: 18rem;
         height: 4.8rem;
         margin-top: 0.8rem;
+        @media (max-width: $r_desk) {
+            display: none;
+        }
+        @media (max-width: $r_tab_900) {
+            display: block;
+            flex-basis: auto;
+            width: 13rem;
+            height: 3.8rem;
+            margin: 0 auto 3rem;
+        }
     }
 }
 .conteiner {
@@ -450,7 +460,7 @@ body {
     @media (max-width: $r_desk_1280) {
         font-size: 6rem;
     }
-    @media (max-width: $r_tab) {
+    @media (max-width: $r_tab_900) {
         text-align: center;
     }
     &__span {
@@ -465,7 +475,7 @@ body {
 .description {
     margin: 0;
     line-height: 1.5;
-    @media (max-width: $r_tab) {
+    @media (max-width: $r_tab_900) {
         text-align: center;
     }
     &_size-s {
@@ -505,6 +515,12 @@ body {
         padding: 2rem 2.7rem;
         box-shadow: 0px 1 rem 1.1rem .17rem rgba(207, 92, 13, 0.2);
     }
+    // &_max {
+    //     flex-grow: 1;
+    //     text-align: center;
+    //     padding-left: 0;
+    //     padding-right: 0;
+    // }
 }
 .offer {
     padding-top: 2rem;
@@ -686,6 +702,12 @@ body {
         right: 72px;
     }
 }
+.swiper-slide__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+}
 .swiper-horizontal > .swiper-pagination-bullets {
     bottom: -50px;
     display: flex;
@@ -702,6 +724,9 @@ body {
 }
 .counter {
     display: flex;
+    @media (max-width: $r_tab) {
+        display: none;
+    }
     &__btn {
         cursor: pointer;
         height: 50px;
@@ -739,6 +764,12 @@ body {
             width: 33px;
         }
     }
+    & + .link {
+        flex-grow: 1;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 .about {
     padding-bottom: 100px;
@@ -747,17 +778,27 @@ body {
         justify-content: space-between;
         align-items: center;
         margin-top: 7rem;
+        gap: 10rem;
+        @media (max-width: $r_tab) {
+            flex-direction: column;
+            justify-content: center;
+            gap: 7rem;
+        }
     }
     &__text {
         margin-left: 12rem;
         max-width: 629px;
         @media (max-width: $r_desk_1280) {
             padding-left: 8rem;
+            padding-left: 0;
+        }
+        @media (max-width: $r_desk) {
+            margin-left: 0;
         }
         @media (max-width: $r_tab) {
+            flex-basis: auto;
             text-align: center;
             max-width: 100%;
-            padding-left: 0;
             margin-top: 3rem;
         }
     }
@@ -770,6 +811,14 @@ body {
         font-size: 3rem;
         margin: 0;
         padding-left: 0;
+        @media (max-width: $r_desk_1280) {
+            font-size: 2.5rem;
+            gap: 6rem;
+        }
+        @media (max-width: $r_desk) {
+            font-size: 2.2rem;
+            gap: 4rem;
+        }
     }
     &__item {
         display: flex;
@@ -849,9 +898,21 @@ body {
     display: flex;
     align-items: center;
     gap: 2rem;
+    @media (max-width: $r_desk_1280) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    @media (max-width: $r_tab_900) {
+        font-size: 1.4rem;
+        gap: 1rem;
+        justify-content: center;
+    }
     &__item {
         flex-basis: 230px;
         text-align: center;
+        @media (max-width: $r_tab) {
+            flex-basis: 170px;
+        }
     }
     &__link {
         padding: 2.4rem 0;
@@ -862,6 +923,10 @@ body {
         border-radius: 4rem;
         display: block;
         transition: .2s;
+        @media (max-width: $r_tab) {
+            font-size: 1.4rem;
+            padding: 1.8rem 0;
+        }
         &:hover {
             border: 1px solid $orange;
             color: $orange;
@@ -872,6 +937,12 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    @media (max-width: $r_desk_1400) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: $r_desk_1120) {
+        grid-template-columns: repeat(2, 1fr);
+    }
     &__item {
         border: 1px solid rgba($green, .4);
         border-radius: 2rem;
@@ -920,10 +991,15 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 5%;
     }
 }
 .delivery {
     padding-bottom: 100px;
+    // @media (max-width: $r_tab_900) {
+    //     display: flex;
+    //     flex-direction: column;
+    // }
     &__link {
         color: #27300f;
         text-decoration: none;
@@ -946,11 +1022,22 @@ body {
         line-height: 1.5;
         margin-top: 5.6rem;
         gap: 12%;
+        @media (max-width: $r_desk_1120) {
+            margin-left: 0;
+        }
+        @media (max-width: $r_tab_900) {
+            flex-direction: column;
+            text-align: center;
+            max-width: 500px;
+            margin: 5rem auto 0;
+        }
     }
     &__text-left {
         flex-basis: 44%;
         margin-left: 12rem;
-
+        @media (max-width: $r_tab_900) {
+            margin-left: 0;
+        }
     }
     &__text-right {
         flex-basis: 37%;
@@ -964,6 +1051,9 @@ body {
         padding-left: 0;
         list-style-type: none;
         margin-top: 4.3rem;
+        @media (max-width: $r_tab_900) {
+            justify-content: center;
+        }
     }
     &__logo-item {
         background-repeat: no-repeat;
@@ -1000,6 +1090,12 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width: $r_desk_1120) {
+            gap: 10%;
+        }
+        @media (max-width: $r_tab_900) {
+            flex-direction: column;
+        }
         &__description {
             font-size: 1.8rem;
             color: $green;
@@ -1012,15 +1108,31 @@ body {
         &__list {
             padding-top: 3rem;
             list-style-type: none;
+            @media (max-width: $r_tab_900) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 1.6rem;
+                width: 100%;
+                padding-left: 0;
+            }
         }
         &__text {
             max-width: 400px;
             flex-grow: 1;
             margin-left: 12rem;
             padding-top: 5rem;
+            @media (max-width: $r_tab_900) {
+                margin-left: 0;
+                text-align: center;
+            }
         }
         &__form {
             flex-basis: 589px;
+            @media (max-width: $r_desk_1120) {
+                flex-basis: auto;
+                flex-grow: 1;
+            }
         }
         &__link {
             color: #27300f;
@@ -1030,6 +1142,9 @@ body {
             align-items: center;
             gap: 3rem;
             transition: .2s;
+            @media (max-width: $r_tab_900) {
+                gap: 1rem;
+            }
             &::before {
                 content: '';
                 background-repeat: no-repeat;
@@ -1057,6 +1172,9 @@ body {
     padding: 3.2rem 5.8rem 4rem;
     border: 2px solid rgba($green, .4);
     border-radius: 2rem;
+    @media (max-width: $r_desk) {
+        padding: 3.2rem 3rem 4rem;
+    }
     &__title {
         font-size: 3rem;
         font-family: $font-cormorant;
@@ -1113,16 +1231,36 @@ footer {
         display: flex;
         justify-content: space-between;
         font-size: 1.8rem;
+        @media (max-width: $r_desk_hd) {
+            gap: 9%;
+        }
+        @media (max-width: $r_tab_900) {
+            flex-direction: column;
+        }
     }
     &__info {
         display: flex;
         justify-content: space-between;
         flex-basis: 66.5%;
+        @media (max-width: $r_desk_hd) {
+            flex-basis: auto;
+            flex-grow: 1;
+        }
     }
     &__list {
         list-style-type: none;
         padding-left: 0;
         margin: 0;
+        @media (max-width: $r_tab_900) {
+            margin-bottom: 3rem;
+        }
+        &:first-child {
+            @media (max-width: $r_tab_900) {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+        }
     }
     &__item {
         margin-bottom: 2.6rem;
@@ -1146,6 +1284,23 @@ footer {
         font-size: 2.7rem;
         display: block;
         margin-bottom: 3rem;
+        @media (max-width: $r_tab_900) {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 66%;
+        @media (max-width: $r_desk_hd) {
+            flex-basis: auto;
+            flex-grow: 1;
+        }
+        @media (max-width: $r_tab_900) {
+            flex-direction: column;
+            text-align: center;
+        }
     }
     &__text {
         display: flex;
@@ -1153,6 +1308,10 @@ footer {
         font-size: 1.6rem;
         color: rgba($green, .6);
         margin-top: 4rem;
+        @media (max-width: $r_tab_900) {
+            flex-direction: column;
+            text-align: center;
+        }
     }
     &__author {
         color: rgba($green, .6);
@@ -1174,6 +1333,10 @@ footer {
     padding-left: 0;
     margin-top: 3rem;
     margin-bottom: 0;
+    @media (max-width: $r_tab_900) {
+        justify-content: center;
+        gap: 3rem;
+    }
     &__link {
         display: block;
         width: 4.6rem;
