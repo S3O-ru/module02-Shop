@@ -21,6 +21,7 @@ $r_desk_hd: 1200px;
 $r_desk_1280: 1280px;
 $r_desk_1300: 1300px;
 $r_desk_1400: 1400px;
+$r_desk_1650: 1650px;
 
 html {
     font-size: 10px;
@@ -34,7 +35,6 @@ body {
     background-image: url(../images/background-all.png);
     background-repeat: no-repeat;
     background-size: cover;
-    // overflow: hidden;
 
 }
 .header {
@@ -223,6 +223,9 @@ body {
         box-shadow: 0 0 33px 0 rgba($green, .5);
         box-sizing: border-box;
         gap: 15px;
+        @media (max-width: $r_tab) {
+            display: none;
+        }
         &::after {
             content: '';
             border: 9px solid transparent;
@@ -687,6 +690,9 @@ body {
 .trends {
     padding-top: 2rem;
     padding-bottom: 128px;
+    @media (max-width: $r_mob_400) {
+        padding-bottom: 0;
+    }
     &__text {
         margin-top: 6rem;
         max-width: 700px;
@@ -1058,6 +1064,9 @@ body {
     @media (max-width: $r_tab) {
         padding-bottom: 8rem;
     }
+    @media (max-width: $r_mob_400) {
+        padding-top: 5.5rem
+    }
     &__list {
         margin-top: 8.5rem;
         margin-bottom: 5rem;
@@ -1106,6 +1115,13 @@ body {
         font-size: 1.4rem;
         gap: 1rem;
         justify-content: center;
+    }
+    @media (max-width: $r_mob_400) {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: 600px;
+        overflow: hidden;
     }
     &__item {
         flex-basis: 230px;
