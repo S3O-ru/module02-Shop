@@ -213,8 +213,8 @@ body {
         display: flex;
         align-items: center;
         position: absolute;
-        right: -70px;
-        bottom: -130px;
+        right: -13px;
+        bottom: -140px;
         border-radius: 30px;
         background-color: white;
         width: 280px;
@@ -232,7 +232,7 @@ body {
             border-bottom: 17px solid white;
             position: absolute;
             top: -25px;
-            right: 80px;
+            right: 29px
         }
     }
     &__cover {
@@ -304,6 +304,7 @@ body {
 .main {
     position: relative;
     padding-bottom: 187px;
+    overflow: hidden;
     @media (max-width: $r_mob_500) {
         padding-bottom: 50px;
         }
@@ -431,12 +432,12 @@ body {
         letter-spacing: 0.13rem;
         cursor: pointer;
         &:hover {
-            .main__btn {
+            // .main__btn {
                 &::before {
                     background-color: $orange;
                     box-shadow: 0 0 0 4px #fff, 0 0 0 5px $orange;
                 }
-            }
+            // }
         }
         &::before {
             position: absolute;
@@ -509,8 +510,8 @@ body {
         box-sizing: border-box;
         visibility: hidden;
         &_02 {
-            right: -100px;
-            bottom: 230px;
+            right: 42px;
+            bottom: 340px;
         }
     }
     &__title {
@@ -615,6 +616,9 @@ body {
     }
     @media (max-width: $r_tab_900) {
         text-align: center;
+    }
+    @media (max-width: $r_minmob) {
+        font-size: 4rem;
     }
     &__span {
         font-style: italic;
@@ -864,7 +868,7 @@ body {
             max-height: 293px;
             text-align: center;
         }
-        &__image {
+        &__image img {
             height: 100%;
         }
         &__footer {
@@ -903,6 +907,11 @@ body {
         left: initial;
         right: 72px;
     }
+}
+.swiper-slide__cover img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
 }
 .swiper-slide__footer {
     display: flex;
@@ -1021,6 +1030,9 @@ body {
             font-size: 2.2rem;
             gap: 4rem;
         }
+        @media (max-width: $r_minmob) {
+            gap: 3rem;
+        }
     }
     &__item {
         display: flex;
@@ -1066,6 +1078,10 @@ body {
     }
     @media (max-width: $r_mob_400) {
         padding-top: 5.5rem
+    }
+    &__box-list {
+        width: 100%;
+        overflow-x: hidden;
     }
     &__list {
         margin-top: 8.5rem;
@@ -1162,13 +1178,16 @@ body {
     @media (max-width: $r_tab) {
         gap: 10px;
     }
+    @media (max-width: $r_minmob) {
+        grid-template-columns: repeat(1, 1fr);
+    }
     &__item {
         border: 1px solid rgba($green, 0.4);
         border-radius: 2rem;
         padding: 2.7rem 3rem 3.8rem;
         box-sizing: border-box;
         &:hover{
-            box-sizing: 0 0 0 2px rgba($green, 0.4) inset;
+            box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
         }
         @media (max-width: $r_tab) {
             padding: 2.2rem 2rem 2.8rem;
@@ -1357,6 +1376,9 @@ body {
                 width: 100%;
                 padding-left: 0;
             }
+            @media (max-width: $r_minmob) {
+                font-size: 1.2rem;
+            }
         }
         &__text {
             max-width: 400px;
@@ -1494,6 +1516,9 @@ footer {
         margin: 0;
         @media (max-width: $r_tab_900) {
             margin-bottom: 3rem;
+        }
+        @media (max-width: $r_minmob) {
+            font-size: 1.5rem;
         }
         &:first-child {
             @media (max-width: $r_tab_900) {
