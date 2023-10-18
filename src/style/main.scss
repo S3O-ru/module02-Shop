@@ -835,11 +835,9 @@ body {
             align-items: center;
             gap: 2rem;
             letter-spacing: 0.13rem;
-            padding-top: 5rem;
             opacity: .8;
             transition: .2s;
             @media (max-width: $r_mob_500) {
-                padding-top: 1rem;
                 font-size: 1.25rem;
                 justify-content: center;
                 gap: 1rem;
